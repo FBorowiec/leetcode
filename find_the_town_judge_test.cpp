@@ -4,9 +4,9 @@
  *
  * If the town judge exists, then:
  *
- *     The town judge trusts nobody.
- *     Everybody (except for the town judge) trusts the town judge.
- *     There is exactly one person that satisfies properties 1 and 2.
+ * - The town judge trusts nobody.
+ * - Everybody (except for the town judge) trusts the town judge.
+ * - There is exactly one person that satisfies properties 1 and 2.
  *
  * You are given trust, an array of pairs trust[i] = [a, b]
  * representing that the person labelled a trusts the person labelled b.
@@ -17,16 +17,31 @@
 #include <vector>
 
 class Solution {
-public:
-    int findJudge(int N, std::vector<std::vector<int>>& trust) {
-      if (N < 1 || N > 1000) return -1;
-      if (trust.size() > 10000) return -1;
-      for (size_t i{0}; i < trust.size(); ++i) {
-        if (trust[i][0] == trust [i][1]) return -1;
-        if ((trust[i][0] < 1 || trust [i][0] > N) || (trust[i][1] < 1 || trust [i][1] > N)) return -1;
-      }
-      return -1;
+ public:
+  int findJudge(int N, std::vector<std::vector<int>>& trust)
+  {
+    if (N < 1 || N > 1000) return -1;
+    if (trust.size() > 10000) return -1;
+
+    std::vector<int> probable_judge(N, 0);
+    std::vector<int> unprobable_judge(N, 0);
+
+    for (std::vector<int> &persons_pair : trust)
+    {
+        if (persons_pair[0] == persons_pair[1]) return -1;
+        if ((persons_pair[0] < 1 || persons_pair[0] > N) || (persons_pair[1] < 1 || persons_pair[1] > N)) return -1;
+
+        probable_judge[persons_pair[1] - 1]++;
+        unprobable_judge[persons_pair[0] - 1]++;
     }
+
+    for (int i = 1; i <= N; i++)
+    {
+      if ((probable_judge[i] == N - 1) && (unprobable_judge[i] == 0)) return i + 1;
+    }
+
+    return -1;
+  }
 };
 
 // TEST --------------------------------------------------------------------------------------------------------------|
@@ -117,6 +132,17 @@ TEST_F(FindTheTownJudgeTest, VectorWithSamePeople_ThenDontTrust)
 TEST_F(FindTheTownJudgeTest, MorePeopleThanDeclared_ThenDontTrust)
 {
   ASSERT_EQ(solution.findJudge(1, more_people_than_declared), -1);
+}
+
+TEST_F(FindTheTownJudgeTest, FAILING_ON_LEETCODE)
+{
+  // Given
+  int n{3};
+  Matrix trust{{1, 3}, {2, 3}, {3, 1}};
+  // When
+  int expected_output{3};
+  // Then
+  ASSERT_EQ(solution.findJudge(n, trust), expected_output);
 }
 
 }  // namespace
