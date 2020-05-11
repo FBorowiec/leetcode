@@ -9,6 +9,7 @@
  * Return True if n is a happy number, and False if not.
  */
 #include <cmath>
+#include <string>
 #include <chrono>
 
 class Solution {
@@ -16,9 +17,10 @@ public:
   bool isHappy(int n) {
     if (n<1) return false;
     int res = 0;
-    auto start_time = std::chrono::duration::now();
+    auto start_time = std::chrono::high_resolution_clock::now();
     while (res != 1)
     {
+      if ((std::chrono::high_resolution_clock::now() - start_time).count() > 2e9) return false;
       auto n_s{std::to_string(n)};
       n=0;
       for (unsigned int i = 0; i<n_s.length(); ++i)
@@ -41,7 +43,7 @@ namespace
 TEST(isHappyTest, TwoIsHappy)
 {
   Solution sol{};
-  ASSERT_TRUE(sol.isHappy(2));
+  ASSERT_FALSE(sol.isHappy(4));
 }
 
 }  // namespace
