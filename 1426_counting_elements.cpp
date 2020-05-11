@@ -39,4 +39,4 @@ TEST(countElementsTest, NonConsecutiveNumbers_ThenDontCount)
   ASSERT_EQ(res, expected_result);
 }
 
-}
+}  // namespace

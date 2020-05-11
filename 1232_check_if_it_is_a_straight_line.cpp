@@ -22,10 +22,12 @@ class Solution
   }
 };
 
-// TEST
+// TEST --------------------------------------------------------------------------------------------------------------|
 #include <gtest/gtest.h>
+
 namespace
 {
+
 class CheckIfItIsAStraightLine : public ::testing::Test
 {
  public:
@@ -58,4 +60,5 @@ TEST_F(CheckIfItIsAStraightLine, IfInvalidLine_ThenReturnsFalse)
 {
   ASSERT_FALSE(sol.checkStraightLine(bad_line_));
 }
+
 }  // namespace

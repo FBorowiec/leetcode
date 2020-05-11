@@ -48,4 +48,4 @@ TEST(romanToIntTest, RandomRomanNumbersToInt)
     ASSERT_EQ(sol.romanToInt("MCMXCIII"), 1993);
 }
 
-}
+}  // namespace
