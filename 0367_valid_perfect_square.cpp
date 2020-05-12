@@ -1,18 +1,12 @@
+/**
+ * Given a positive integer num, write a function which returns True if num is a perfect square else False.
+ * Note: Do not use any built-in library function such as sqrt.
+ */
 #include <cstddef>
 #include <limits>
 
 class Solution {
 public:
-  /**
-   * PROBLEM:
-   * Given a positive integer num, write a function which returns True if num is a perfect square else False.
-   * Note: Do not use any built-in library function such as sqrt.
-   *
-   * SOLUTION:
-   * Simple divide-and-conquer strategy can be used.
-   * It won't converge as fast as some other methods since it's an O(log n) algorithm
-   * (halving the search space each iteration).
-   */
   bool isPerfectSquare(int num) {
     if (num == 1) return true;
     if (num < 1 || num > std::numeric_limits<int>::max()) return false;

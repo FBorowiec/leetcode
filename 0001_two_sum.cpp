@@ -31,7 +31,7 @@ public:
 namespace
 {
 
-TEST(twoSumTest, FuncCall)
+TEST(twoSumTest, FirstTwoNumbersSumIsTarget)
 {
   std::vector<int> nums{2, 7, 11, 15};
   std::vector<int> expected_result{0, 1};

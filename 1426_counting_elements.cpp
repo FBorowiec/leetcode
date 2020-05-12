@@ -1,3 +1,6 @@
+/**
+ * Count an element in a vector if the element preceding is either equal or smaller by 1.
+ */
 #include <algorithm>
 #include <unordered_set>
 #include <vector>
