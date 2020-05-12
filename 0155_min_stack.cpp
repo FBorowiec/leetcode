@@ -8,6 +8,9 @@
 #include <algorithm>
 #include <vector>
 
+namespace min_stack
+{
+
 class MinStack {
  public:
   MinStack() {}
@@ -45,6 +48,8 @@ class MinStack {
   int size{0};
 };
 
+}  // namespace min_stack
+
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -53,7 +58,7 @@ namespace
 
 TEST(MinStackTest, AllFunctionsYieldExpectedResults)
 {
-  MinStack min_stack{};
+  min_stack::MinStack min_stack{};
   min_stack.push(5);
   min_stack.push(6);
   min_stack.push(7);

@@ -4,26 +4,31 @@
  */
 #include <vector>
 
+namespace two_sum
+{
+
 class Solution {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target)
+  std::vector<int> twoSum(std::vector<int>& nums, int target)
+  {
+    for (int i = 0; i<nums.size(); ++i)
     {
-        for (int i = 0; i<nums.size(); ++i)
+      for (int j = 0; j<nums.size(); ++j)
+      {
+        if (i == j) continue;
+        int sum = nums[i]+nums[j];
+        if (sum == target)
         {
-            for (int j = 0; j<nums.size(); ++j)
-            {
-                if (i == j) continue;
-                int sum = nums[i]+nums[j];
-                if (sum == target)
-                {
-                    std::vector<int> vec{i, j};
-                    return vec;
-                }
-            }
+            std::vector<int> vec{i, j};
+            return vec;
         }
-        return {0};
+      }
     }
+    return {0};
+  }
 };
+
+}  // namespace two_sum
 
 // TEST----------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
@@ -36,7 +41,7 @@ TEST(twoSumTest, FirstTwoNumbersSumIsTarget)
   std::vector<int> nums{2, 7, 11, 15};
   std::vector<int> expected_result{0, 1};
   int target{9};
-  Solution sol{};
+  two_sum::Solution sol{};
   auto res =sol.twoSum(nums, target);
   for (size_t i{0}; i<expected_result.size(); ++i)
   {

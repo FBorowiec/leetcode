@@ -5,6 +5,9 @@
 #include <cstddef>
 #include <limits>
 
+namespace valid_perfect_square
+{
+
 class Solution {
 public:
   bool isPerfectSquare(int num) {
@@ -21,6 +24,8 @@ public:
     return false;
   }
 };
+
+}  // namespace valid_perfect_square
 
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include <cmath>
@@ -49,10 +54,11 @@ class isPerfectSquareTest : public ::testing::Test {
   }
 
  protected:
-  Solution solution{};
+  valid_perfect_square::Solution solution{};
   std::vector<int> vec_perfect_squares_{(std::vector<int>(100))};
   std::vector<int> vec_corrupted_squares_{(std::vector<int>(100))};
 };
+
 
 TEST_F(isPerfectSquareTest, VectorOfSquares_ArePerfectSquares)
 {

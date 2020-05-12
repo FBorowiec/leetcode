@@ -17,6 +17,9 @@
 
 using Matrix = std::vector<std::vector<int>>;
 
+namespace flood_fill
+{
+
 class Solution {
 public:
   std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int newColor)
@@ -34,6 +37,8 @@ public:
     return {{0}};
   }
 };
+
+}  // namespace flood_fill
 
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
@@ -53,7 +58,7 @@ TEST_F(FloodFillTest, 3x3Image_ThenFlooded)
   Matrix expected_img{{2,2,2}, {2,2,0}, {2,0,1}};
   int sr{1}, sc{1}, new_color{2};
 
-  Solution sol{};
+  flood_fill::Solution sol{};
   auto res = sol.floodFill(input_img, sr, sc, new_color);
 
   for(size_t i{0}; i<expected_img.size(); ++i)
@@ -68,7 +73,7 @@ TEST_F(FloodFillTest, WrongImageDimensions_ThenNotFlooded)
   Matrix expected_img = input_img;
   int sr{1}, sc{1}, new_color{2};
 
-  Solution sol{};
+  flood_fill::Solution sol{};
   auto res = sol.floodFill(input_img, sr, sc, new_color);
 
   for(size_t i{0}; i<expected_img.size(); ++i)
@@ -83,7 +88,7 @@ TEST_F(FloodFillTest, WrongStartingPixel_ThenNotFlooded)
   Matrix expected_img = input_img;
   int sr{12}, sc{1}, new_color{2};
 
-  Solution sol{};
+  flood_fill::Solution sol{};
   auto res = sol.floodFill(input_img, sr, sc, new_color);
 
   for(size_t i{0}; i<expected_img.size(); ++i)
@@ -98,7 +103,7 @@ TEST_F(FloodFillTest, WrongPixelInTheImage_ThenNotFlooded)
   Matrix expected_img = input_img;
   int sr{1}, sc{1}, new_color{2};
 
-  Solution sol{};
+  flood_fill::Solution sol{};
   auto res = sol.floodFill(input_img, sr, sc, new_color);
 
   for(size_t i{0}; i<expected_img.size(); ++i)

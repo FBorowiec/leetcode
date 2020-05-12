@@ -5,6 +5,9 @@
 #include <unordered_set>
 #include <vector>
 
+namespace counting_elements
+{
+
 class Solution {
 	public:
 	int countElements(std::vector<int>& arr)
@@ -18,6 +21,8 @@ class Solution {
 	}
 };
 
+}  // namespace counting_elements
+
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -28,7 +33,7 @@ TEST(countElementsTest, ConsecutiveNumbers_ThenCount)
 {
   std::vector<int> input{1, 2, 2, 2, 3};
   int expected_result{4};
-  Solution sol{};
+  counting_elements::Solution sol{};
   auto res = sol.countElements(input);
   ASSERT_EQ(res, expected_result);
 }
@@ -37,7 +42,7 @@ TEST(countElementsTest, NonConsecutiveNumbers_ThenDontCount)
 {
   std::vector<int> input{1, 3, 7, 9, 12};
   int expected_result{0};
-  Solution sol{};
+  counting_elements::Solution sol{};
   auto res = sol.countElements(input);
   ASSERT_EQ(res, expected_result);
 }

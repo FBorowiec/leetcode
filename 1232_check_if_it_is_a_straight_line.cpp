@@ -7,6 +7,9 @@
 
 using Coordinates=std::vector<std::vector<int>>;
 
+namespace check_if_it_is_a_straight_line
+{
+
 class Solution
 {
  public:
@@ -27,6 +30,8 @@ class Solution
   }
 };
 
+}  // namespace check_if_it_is_a_straight_line
+
 // TEST --------------------------------------------------------------------------------------------------------------|
 #include <gtest/gtest.h>
 
@@ -39,7 +44,7 @@ class CheckIfItIsAStraightLine : public ::testing::Test
   void SetUp() override {}
 
  protected:
-  Solution sol{};
+  check_if_it_is_a_straight_line::Solution sol{};
   Coordinates good_line_{{1,1},{2,2},{33,33},{4,4},{5,5},{7,7}};
   Coordinates bad_line_{{1,1},{2,2},{3,5},{4,5},{1,6},{7,7}};
   Coordinates one_point_{{0, 1}};

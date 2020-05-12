@@ -16,6 +16,9 @@
  */
 #include <vector>
 
+namespace find_the_town_judge
+{
+
 class Solution {
  public:
   int findJudge(int N, std::vector<std::vector<int>>& trust)
@@ -44,6 +47,8 @@ class Solution {
   }
 };
 
+}  // namespace find_the_town_judge
+
 // TEST --------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -58,7 +63,7 @@ class FindTheTownJudgeTest : public ::testing::Test
   void SetUp() override {}
 
  protected:
-  Solution solution{};
+  find_the_town_judge::Solution solution{};
   Matrix oversize_vector{(Matrix(10001, {std::vector<int>(2, 1)}))};
   Matrix same_people{(Matrix(100, {std::vector<int>(2, 1)}))};
   Matrix more_people_than_declared{{1000, 1}, {1234, 987}, {324892, 98}};

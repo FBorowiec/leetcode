@@ -4,6 +4,9 @@
  */
 #include <vector>
 
+namespace single_element_in_a_sorted_array
+{
+
 class Solution {
 public:
     int singleNonDuplicate(std::vector<int>& nums)
@@ -18,6 +21,8 @@ public:
     }
 };
 
+}  // namespace single_element_in_a_sorted_array
+
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -26,7 +31,7 @@ namespace
 
 TEST(SingleNonDuplicateTest, Number2_IsNonDuplicate)
 {
-  Solution sol{};
+  single_element_in_a_sorted_array::Solution sol{};
   std::vector<int> input_vec{1, 1, 2, 3, 3, 4, 4, 8, 8};
   int expected_result{2};
 
@@ -35,7 +40,7 @@ TEST(SingleNonDuplicateTest, Number2_IsNonDuplicate)
 
 TEST(SingleNonDuplicateTest, Number10_IsNonDuplicate)
 {
-  Solution sol{};
+  single_element_in_a_sorted_array::Solution sol{};
   std::vector<int> input_vec{3, 3, 7, 7, 10, 11, 11};
   int expected_result{10};
 
@@ -44,7 +49,7 @@ TEST(SingleNonDuplicateTest, Number10_IsNonDuplicate)
 
 TEST(SingleNonDuplicateTest, LastNumber_IsNonDuplicate)
 {
-  Solution sol{};
+  single_element_in_a_sorted_array::Solution sol{};
   std::vector<int> input_vec{3, 3, 7, 7, 11, 11, 20};
   int expected_result{20};
 
@@ -53,7 +58,7 @@ TEST(SingleNonDuplicateTest, LastNumber_IsNonDuplicate)
 
 TEST(SingleNonDuplicateTest, FirstNumber_IsNonDuplicate)
 {
-  Solution sol{};
+  single_element_in_a_sorted_array::Solution sol{};
   std::vector<int> input_vec{0, 3, 3, 7, 7, 11, 11, 20, 20};
   int expected_result{0};
 
@@ -62,7 +67,7 @@ TEST(SingleNonDuplicateTest, FirstNumber_IsNonDuplicate)
 
 TEST(SingleNonDuplicateTest, OnlyOneNumber_ThenNumberIsNonDuplicate)
 {
-  Solution sol{};
+  single_element_in_a_sorted_array::Solution sol{};
   std::vector<int> input_vec{1};
   int expected_result{1};
 

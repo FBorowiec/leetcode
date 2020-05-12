@@ -4,6 +4,9 @@
  */
 #include <string>
 
+namespace roman_to_integer
+{
+
 class Solution {
 public:
     int romanToInt(std::string s) {
@@ -38,6 +41,8 @@ public:
     }
 };
 
+}  // namespace roman_to_integer
+
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -46,7 +51,7 @@ namespace
 
 TEST(romanToIntTest, RandomRomanNumbersToInt)
 {
-    Solution sol{};
+    roman_to_integer::Solution sol{};
     ASSERT_EQ(sol.romanToInt("MCVII"), 1107);
     ASSERT_EQ(sol.romanToInt("IX"), 9);
     ASSERT_EQ(sol.romanToInt("MCMXCIII"), 1993);

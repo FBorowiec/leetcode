@@ -1,5 +1,7 @@
 # These are my solution to Leetcode problems
 
+Requires Bazel
+
 ## Install gtest on Linux
 
 sudo apt-get install libgtest-dev cmake

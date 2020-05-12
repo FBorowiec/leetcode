@@ -12,6 +12,9 @@
 #include <string>
 #include <chrono>
 
+namespace happy_number
+{
+
 class Solution {
 public:
   bool isHappy(int n) {
@@ -34,6 +37,8 @@ public:
   }
 };
 
+}  // namespace happy_number
+
 // TEST---------------------------------------------------------------------------------------------------------------|
 #include "gtest/gtest.h"
 
@@ -42,7 +47,7 @@ namespace
 
 TEST(isHappyTest, TwoIsHappy)
 {
-  Solution sol{};
+  happy_number::Solution sol{};
   ASSERT_FALSE(sol.isHappy(4));
 }
 
