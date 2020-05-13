@@ -1,8 +1,6 @@
-cc_test(
-  name = "unit_tests",
+cc_library(
+  name = "leetcode",
+  hdrs=glob(["*.hpp"]),
   srcs = glob(["*.cpp"]),
-  deps = [
-      "@gtest//:gtest",
-      "@gtest//:gtest_main"
-    ],
+  visibility = ["//visibility:public"],
 )

@@ -1,37 +1,10 @@
-/**
- * Given a positive integer num, write a function which returns True if num is a perfect square else False.
- * Note: Do not use any built-in library function such as sqrt.
- */
-#include <cstddef>
-#include <limits>
-
-namespace valid_perfect_square
-{
-
-class Solution {
-public:
-  bool isPerfectSquare(int num) {
-    if (num == 1) return true;
-    if (num < 1 || num > std::numeric_limits<int>::max()) return false;
-
-    using ull = unsigned long long;
-    for (ull i{static_cast<ull>(num)/2}; i > 0; --i) {
-      ull square_pow = i*i;
-      if (square_pow > num) continue;
-      if (square_pow == num) return true;
-      if (square_pow < num) return false;
-    }
-    return false;
-  }
-};
-
-}  // namespace valid_perfect_square
-
-// TEST---------------------------------------------------------------------------------------------------------------|
 #include <cmath>
 #include <vector>
 #include <numeric>
+
 #include "gtest/gtest.h"
+
+#include "problems/0367_valid_perfect_square.hpp"
 
 namespace
 {
