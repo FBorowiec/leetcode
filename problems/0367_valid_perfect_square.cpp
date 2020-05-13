@@ -36,7 +36,7 @@ public:
 namespace
 {
 
-class isPerfectSquareTest : public ::testing::Test {
+class ValidPerfectSquareTest : public ::testing::Test {
  public:
   void SetUp() override {
     // Generate vector of powers of consecutive numbers
@@ -60,7 +60,7 @@ class isPerfectSquareTest : public ::testing::Test {
 };
 
 
-TEST_F(isPerfectSquareTest, VectorOfSquares_ArePerfectSquares)
+TEST_F(ValidPerfectSquareTest, VectorOfSquares_ArePerfectSquares)
 {
   for (const auto val : vec_perfect_squares_)
   {
@@ -69,7 +69,7 @@ TEST_F(isPerfectSquareTest, VectorOfSquares_ArePerfectSquares)
   }
 }
 
-TEST_F(isPerfectSquareTest, VectorOfCorruptedSquares_AreNotPerfectSquares)
+TEST_F(ValidPerfectSquareTest, VectorOfCorruptedSquares_AreNotPerfectSquares)
 {
   for (const auto val : vec_perfect_squares_)
   {
@@ -78,13 +78,13 @@ TEST_F(isPerfectSquareTest, VectorOfCorruptedSquares_AreNotPerfectSquares)
   }
 }
 
-TEST_F(isPerfectSquareTest, OverflowValue_ThenIsNotPerfect)
+TEST_F(ValidPerfectSquareTest, OverflowValue_ThenIsNotPerfect)
 {
   ASSERT_EQ(std::numeric_limits<int>::max(), 2147483647);
   ASSERT_FALSE(solution.isPerfectSquare(2147483647));
 }
 
-TEST_F(isPerfectSquareTest, OverflowValueOfSquarePower_ThenIsPerfect)
+TEST_F(ValidPerfectSquareTest, OverflowValueOfSquarePower_ThenIsPerfect)
 {
   int val{808201};
   ASSERT_TRUE(solution.isPerfectSquare(val));

@@ -53,35 +53,35 @@ public:
 namespace
 {
 
-TEST(ReverseTest, Pos123becomesPos321)
+TEST(ReverseIntegerTest, Pos123becomesPos321)
 {
   reverse_integer::Solution sol{};
   int input{123}, expected_result{321};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseTest, Neg123becomesNeg321)
+TEST(ReverseIntegerTest, Neg123becomesNeg321)
 {
   reverse_integer::Solution sol{};
   int input{-123}, expected_result{-321};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseTest, Pos120becomesPos21)
+TEST(ReverseIntegerTest, Pos120becomesPos21)
 {
   reverse_integer::Solution sol{};
   int input{120}, expected_result{21};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseTest, PositiveOverflow_ThenReturnsZero)
+TEST(ReverseIntegerTest, PositiveOverflow_ThenReturnsZero)
 {
   reverse_integer::Solution sol{};
   size_t input{std::numeric_limits<int>::max() + 1}, expected_result{0};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseTest, NegativeOverflow_ThenReturnsZero)
+TEST(ReverseIntegerTest, NegativeOverflow_ThenReturnsZero)
 {
   reverse_integer::Solution sol{};
   int input{std::numeric_limits<int>::min()}, expected_result{0};

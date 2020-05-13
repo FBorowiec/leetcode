@@ -49,7 +49,7 @@ public:
 namespace
 {
 
-TEST(romanToIntTest, RandomRomanNumbersToInt)
+TEST(RomanToIntegerTest, RandomRomanNumbersToInt)
 {
     roman_to_integer::Solution sol{};
     ASSERT_EQ(sol.romanToInt("MCVII"), 1107);

@@ -38,7 +38,7 @@ class Solution
 namespace
 {
 
-class CheckIfItIsAStraightLine : public ::testing::Test
+class CheckIfItIsAStraightLineTest : public ::testing::Test
 {
  public:
   void SetUp() override {}
@@ -51,22 +51,22 @@ class CheckIfItIsAStraightLine : public ::testing::Test
   Coordinates two_points_{{0, 1}, {12354, 7457354}};
 };
 
-TEST_F(CheckIfItIsAStraightLine, IfLinesPointsVectorTooSmall_ThenReturnsFalse)
+TEST_F(CheckIfItIsAStraightLineTest, IfLinesPointsVectorTooSmall_ThenReturnsFalse)
 {
   ASSERT_FALSE(sol.checkStraightLine(one_point_));
 }
 
-TEST_F(CheckIfItIsAStraightLine, IfLinesPointsVectorEqualsTwo_ThenReturnsTrue)
+TEST_F(CheckIfItIsAStraightLineTest, IfLinesPointsVectorEqualsTwo_ThenReturnsTrue)
 {
   ASSERT_TRUE(sol.checkStraightLine(two_points_));
 }
 
-TEST_F(CheckIfItIsAStraightLine, IfValidLine_ThenReturnsTrue)
+TEST_F(CheckIfItIsAStraightLineTest, IfValidLine_ThenReturnsTrue)
 {
   ASSERT_TRUE(sol.checkStraightLine(good_line_));
 }
 
-TEST_F(CheckIfItIsAStraightLine, IfInvalidLine_ThenReturnsFalse)
+TEST_F(CheckIfItIsAStraightLineTest, IfInvalidLine_ThenReturnsFalse)
 {
   ASSERT_FALSE(sol.checkStraightLine(bad_line_));
 }

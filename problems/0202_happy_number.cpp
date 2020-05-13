@@ -45,7 +45,7 @@ public:
 namespace
 {
 
-TEST(isHappyTest, TwoIsHappy)
+TEST(HappyNumberTest, TwoIsNotHappy)
 {
   happy_number::Solution sol{};
   ASSERT_FALSE(sol.isHappy(4));

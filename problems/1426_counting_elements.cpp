@@ -29,7 +29,7 @@ class Solution {
 namespace
 {
 
-TEST(countElementsTest, ConsecutiveNumbers_ThenCount)
+TEST(CountingElementsTest, ConsecutiveNumbers_ThenCount)
 {
   std::vector<int> input{1, 2, 2, 2, 3};
   int expected_result{4};
@@ -38,7 +38,7 @@ TEST(countElementsTest, ConsecutiveNumbers_ThenCount)
   ASSERT_EQ(res, expected_result);
 }
 
-TEST(countElementsTest, NonConsecutiveNumbers_ThenDontCount)
+TEST(CountingElementsTest, NonConsecutiveNumbers_ThenDontCount)
 {
   std::vector<int> input{1, 3, 7, 9, 12};
   int expected_result{0};
