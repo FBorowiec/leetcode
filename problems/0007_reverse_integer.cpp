@@ -8,8 +8,7 @@
 #include <algorithm>
 #include <cstdint>
 #include <string>
-
-#include <iostream>
+#include <vector>
 
 namespace reverse_integer
 {
@@ -21,16 +20,27 @@ public:
       if (x > std::numeric_limits<int>::max()) return 0;  // prevent overflows
       while (x % 10 == 0) x = x/10;  // discard zeroes at end of x
       std::string x_str = std::to_string(x);
+      std::vector<int> vec(x_str.begin(), x_str.end());
       int i{0}, j{x_str.length()-1};
       while(i<j)
       {
-        auto temp=x_str[i];
-        x_str[i]=x_str[j];
-        x_str[j]=temp;
+        auto temp=vec[i];
+        vec[i]=vec[j];
+        vec[j]=temp;
         i++;
         j--;
       }
-      return std::stoi(x_str);
+
+      std::reverse(vec.begin(), vec.end());
+      int decimal = 1;
+      int total = 0;
+      for (auto& it : vec)
+      {
+          total += (it-48) * decimal;
+          decimal *= 10;
+      }
+
+      return total;
     }
 };
 
