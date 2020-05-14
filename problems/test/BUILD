@@ -1,14 +1,12 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+
 cc_test(
   name = "unit_tests",
-  srcs = glob(
-    [
-      "*_test.cpp",
-    ]
-  ),
+  srcs = glob(["*_test.cpp",]),
   copts = [
-    "-Werror",
-    "-O0",
     "-ggdb",
+    "-O0",
+    "-Werror",
   ],
   features = [
     "extra_warnings",
