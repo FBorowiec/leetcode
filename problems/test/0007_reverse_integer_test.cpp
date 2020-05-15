@@ -7,21 +7,21 @@
 namespace
 {
 
-TEST(ReverseIntegerTest, Pos123becomesPos321)
+TEST(ReverseIntegerTest, DISABLED_Pos123becomesPos321)
 {
   reverse_integer::Solution sol{};
   int input{123}, expected_result{321};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseIntegerTest, Neg123becomesNeg321)
+TEST(ReverseIntegerTest, DISABLED_Neg123becomesNeg321)
 {
   reverse_integer::Solution sol{};
   int input{-123}, expected_result{-321};
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
-TEST(ReverseIntegerTest, Pos120becomesPos21)
+TEST(ReverseIntegerTest, DISABLED_Pos120becomesPos21)
 {
   reverse_integer::Solution sol{};
   int input{120}, expected_result{21};

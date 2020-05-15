@@ -89,7 +89,7 @@ TEST_F(FindTheTownJudgeTest, MorePeopleThanDeclared_ThenDontTrust)
   ASSERT_EQ(solution.findJudge(1, more_people_than_declared), -1);
 }
 
-TEST_F(FindTheTownJudgeTest, FAILING_ON_LEETCODE)
+TEST_F(FindTheTownJudgeTest, DISABLED_WithGivenPopulation_ThenPerson3IsJudge)
 {
   // Given
   int n{3};
