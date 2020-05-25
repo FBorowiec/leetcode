@@ -28,6 +28,13 @@ TEST(ReverseIntegerTest, DISABLED_Pos120becomesPos21)
   ASSERT_EQ(sol.reverse(input), expected_result);
 }
 
+TEST(ReverseIntegerTest, DISABLED_Pos34500becomesPos543)
+{
+  reverse_integer::Solution sol{};
+  int input{34500}, expected_result{543};
+  ASSERT_EQ(sol.reverse(input), expected_result);
+}
+
 TEST(ReverseIntegerTest, PositiveOverflow_ThenReturnsZero)
 {
   reverse_integer::Solution sol{};
