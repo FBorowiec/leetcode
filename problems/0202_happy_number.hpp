@@ -1,12 +1,11 @@
 #ifndef LEETCODE_PROBLEMS_0202_HAPPY_NUMBER_HPP
 #define LEETCODE_PROBLEMS_0202_HAPPY_NUMBER_HPP
 
+#include <chrono>
 #include <cmath>
 #include <string>
-#include <chrono>
 
-namespace happy_number
-{
+namespace happy_number {
 
 class Solution {
  public:
@@ -21,16 +20,14 @@ class Solution {
    * Return True if n is a happy number, and False if not.
    */
   bool isHappy(int n) {
-    if (n<1) return false;
+    if (n < 1) return false;
     int res = 0;
     auto start_time = std::chrono::high_resolution_clock::now();
-    while (res != 1)
-    {
+    while (res != 1) {
       if ((std::chrono::high_resolution_clock::now() - start_time).count() > 2e9) return false;
       auto n_s{std::to_string(n)};
-      n=0;
-      for (unsigned int i = 0; i<n_s.length(); ++i)
-      {
+      n = 0;
+      for (unsigned int i = 0; i < n_s.length(); ++i) {
         n += std::pow((int)n_s[i] - 48, 2);
       }
       res = n;

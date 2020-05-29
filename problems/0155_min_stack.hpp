@@ -4,8 +4,7 @@
 #include <algorithm>
 #include <vector>
 
-namespace min_stack
-{
+namespace min_stack {
 
 /**
  * Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
@@ -19,27 +18,24 @@ class MinStack {
   MinStack() {}
 
   void push(int x) {
-      v.push_back(x);
-      size++;
+    v.push_back(x);
+    size++;
   }
 
   void pop() {
-    if (v.size() != 0)
-    {
+    if (v.size() != 0) {
       v.pop_back();
       size--;
     }
   }
 
   int top() {
-    if (size)
-      return v[size-1];
+    if (size) return v[size - 1];
     return 0;
   }
 
   int getMin() {
-    if (size)
-    {
+    if (size) {
       auto min = std::min_element(std::begin(v), std::end(v));
       return *min;
     }

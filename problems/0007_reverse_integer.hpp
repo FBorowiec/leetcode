@@ -1,4 +1,4 @@
-//UNSOLVED!
+// UNSOLVED!
 #ifndef LEETCODE_PROBLEMS_0007_REVERSE_INTEGER_HPP
 #define LEETCODE_PROBLEMS_0007_REVERSE_INTEGER_HPP
 
@@ -7,8 +7,7 @@
 #include <string>
 #include <vector>
 
-namespace reverse_integer
-{
+namespace reverse_integer {
 
 class Solution {
  public:
@@ -19,10 +18,9 @@ class Solution {
    * within the 32-bit signed integer range: [−231,  231 − 1].
    * For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
    */
-  int reverse(int x)
-  {
+  int reverse(int x) {
     if (x > std::numeric_limits<int>::max()) return 0;  // prevent overflows
-    while (x % 10 == 0) x = x/10;  // discard zeroes at end of x
+    while (x % 10 == 0) x = x / 10;                     // discard zeroes at end of x
     return 0;
   }
 };

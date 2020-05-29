@@ -3,8 +3,7 @@
 
 #include <vector>
 
-namespace single_element_in_a_sorted_array
-{
+namespace single_element_in_a_sorted_array {
 
 class Solution {
  public:
@@ -12,13 +11,13 @@ class Solution {
    * You are given a sorted array consisting of only integers where every element appears exactly twice,
    * except for one element which appears exactly once. Find this single element that appears only once.
    */
-  int singleNonDuplicate(std::vector<int>& nums)
-  {
+  int singleNonDuplicate(std::vector<int>& nums) {
     if (nums.size() < 2) return nums[0];
-    for (size_t i{0}; i<nums.size(); i=i+2)
-    {
-      if (nums[i+1] == nums[i]) continue;
-      else return nums[i];
+    for (size_t i{0}; i < nums.size(); i = i + 2) {
+      if (nums[i + 1] == nums[i])
+        continue;
+      else
+        return nums[i];
     }
     return 0;
   }

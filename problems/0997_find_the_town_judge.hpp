@@ -1,11 +1,10 @@
-//UNSOLVED!
+// UNSOLVED!
 #ifndef LEETCODE_PROBLEMS_0997_FIND_THE_TOWN_JUDGE_HPP
 #define LEETCODE_PROBLEMS_0997_FIND_THE_TOWN_JUDGE_HPP
 
 #include <vector>
 
-namespace find_the_town_judge
-{
+namespace find_the_town_judge {
 
 class Solution {
  public:
@@ -25,16 +24,14 @@ class Solution {
    * If the town judge exists and can be identified, return the label of the town judge.
    * Otherwise, return -1.
    */
-  int findJudge(int N, std::vector<std::vector<int>>& trust)
-  {
+  int findJudge(int N, std::vector<std::vector<int>>& trust) {
     if (N < 1 || N > 1000) return -1;
     if (trust.size() > 10000) return -1;
 
     std::vector<int> probable_judge(N, 0);
     std::vector<int> unprobable_judge(N, 0);
 
-    for (std::vector<int> &persons_pair : trust)
-    {
+    for (std::vector<int>& persons_pair : trust) {
       if (persons_pair[0] == persons_pair[1]) return -1;
       if ((persons_pair[0] < 1 || persons_pair[0] > N) || (persons_pair[1] < 1 || persons_pair[1] > N)) return -1;
 
@@ -42,8 +39,7 @@ class Solution {
       unprobable_judge[persons_pair[0] - 1]++;
     }
 
-    for (int i = 1; i <= N; i++)
-    {
+    for (int i = 1; i <= N; i++) {
       if ((probable_judge[i] == N - 1) && (unprobable_judge[i] == 0)) return i + 1;
     }
 

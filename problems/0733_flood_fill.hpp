@@ -1,4 +1,4 @@
-//UNSOLVED!
+// UNSOLVED!
 #ifndef LEETCODE_PROBLEMS_0733_FLOOD_FILL_HPP
 #define LEETCODE_PROBLEMS_0733_FLOOD_FILL_HPP
 
@@ -6,11 +6,10 @@
 
 using Matrix = std::vector<std::vector<int>>;
 
-namespace flood_fill
-{
+namespace flood_fill {
 
 class Solution {
-public:
+ public:
   /**
    * An image is represented by a 2-D array of integers,
    * each integer representing the pixel value of the image (from 0 to 65535).
@@ -26,15 +25,12 @@ public:
    *
    * At the end, return the modified image.
    */
-  std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int newColor)
-  {
-    if ((image.size()<1 || image.size()>50) || (image[0].size()<1 || image[0].size()>50)) return image;
+  std::vector<std::vector<int>> floodFill(std::vector<std::vector<int>>& image, int sr, int sc, int newColor) {
+    if ((image.size() < 1 || image.size() > 50) || (image[0].size() < 1 || image[0].size() > 50)) return image;
     if ((sr > (int)image.size() || sr < 0) || (sc > (int)image[0].size() || sr < 0)) return image;
 
-    for (unsigned int i{0}; i<image.size(); ++i)
-    {
-      for (unsigned int j{0}; j<image[i].size(); ++j)
-      {
+    for (unsigned int i{0}; i < image.size(); ++i) {
+      for (unsigned int j{0}; j < image[i].size(); ++j) {
         if (image[i][j] > 65535 || image[i][j] < 0) return image;
       }
     }

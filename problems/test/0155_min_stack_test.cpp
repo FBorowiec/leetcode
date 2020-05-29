@@ -2,11 +2,9 @@
 
 #include "problems/0155_min_stack.hpp"
 
-namespace
-{
+namespace {
 
-TEST(MinStackTest, AllFunctionsYieldExpectedResults)
-{
+TEST(MinStackTest, AllFunctionsYieldExpectedResults) {
   min_stack::MinStack min_stack{};
   min_stack.push(5);
   min_stack.push(6);

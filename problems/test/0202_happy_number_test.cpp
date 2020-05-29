@@ -2,11 +2,9 @@
 
 #include "problems/0202_happy_number.hpp"
 
-namespace
-{
+namespace {
 
-TEST(HappyNumberTest, TwoIsNotHappy)
-{
+TEST(HappyNumberTest, TwoIsNotHappy) {
   happy_number::Solution sol{};
   ASSERT_FALSE(sol.isHappy(4));
 }

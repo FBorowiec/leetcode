@@ -1,12 +1,11 @@
-//UNSOLVED!
+// UNSOLVED!
 #ifndef LEETCODE_PROBLEMS_0402_REMOVE_K_DIGITS_HPP
 #define LEETCODE_PROBLEMS_0402_REMOVE_K_DIGITS_HPP
 
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 
-namespace remove_k_digits
-{
+namespace remove_k_digits {
 
 class Solution {
  public:

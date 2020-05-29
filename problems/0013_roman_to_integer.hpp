@@ -3,8 +3,7 @@
 
 #include <string>
 
-namespace roman_to_integer
-{
+namespace roman_to_integer {
 
 class Solution {
  public:
@@ -14,23 +13,22 @@ class Solution {
    */
   int romanToInt(std::string s) {
     int result{0};
-    for(unsigned int i = s.length(); i>0; --i)
-    {
-      switch(s.at(i-1)){
+    for (unsigned int i = s.length(); i > 0; --i) {
+      switch (s.at(i - 1)) {
         case 'I':
-          result += (result>=5 ? -1 : 1);
+          result += (result >= 5 ? -1 : 1);
           break;
         case 'V':
           result += 5;
           break;
         case 'X':
-          result += (result>=50 ? -10 : 10);
+          result += (result >= 50 ? -10 : 10);
           break;
         case 'L':
           result += 50;
           break;
         case 'C':
-          result += (result>=500 ? -100 : 100);
+          result += (result >= 500 ? -100 : 100);
           break;
         case 'D':
           result += 500;

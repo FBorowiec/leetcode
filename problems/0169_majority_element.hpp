@@ -4,11 +4,10 @@
 #include <unordered_map>
 #include <vector>
 
-namespace majority_element
-{
+namespace majority_element {
 
 class Solution {
-public:
+ public:
   /**
    * Given an array of size n, find the majority element.
    * The majority element is the element that appears more than ⌊ n/2 ⌋ times.
@@ -18,7 +17,7 @@ public:
     std::unordered_map<int, size_t> count{};
 
     for (int i : nums) {
-        count[i]++;
+      count[i]++;
     }
 
     std::sort(nums.begin(), nums.end(), [&count](const int& a, const int& b) {
@@ -29,11 +28,11 @@ public:
       else if (count[a] < count[b])
         return false;
       return a < b;
-      });
+    });
     return nums[0];
   }
 };
 
-}  // majority_element
+}  // namespace majority_element
 
 #endif  // LEETCODE_PROBLEMS_0169_MAJORITY_ELEMENT_HPP

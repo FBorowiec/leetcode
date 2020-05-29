@@ -4,8 +4,7 @@
 #include <cstddef>
 #include <limits>
 
-namespace valid_perfect_square
-{
+namespace valid_perfect_square {
 
 class Solution {
  public:
@@ -18,8 +17,8 @@ class Solution {
     if (num < 1 || num > std::numeric_limits<int>::max()) return false;
 
     using ll = long long;
-    for (ll i{static_cast<ll>(num)/2}; i > 0; --i) {
-      ll square_pow = i*i;
+    for (ll i{static_cast<ll>(num) / 2}; i > 0; --i) {
+      ll square_pow = i * i;
       if (square_pow > num) continue;
       if (square_pow == num) return true;
       if (square_pow < num) return false;
