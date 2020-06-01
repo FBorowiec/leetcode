@@ -35,6 +35,10 @@
 .vscode
 .vscode/*
 
+# VS Studio objects
+.vs
+.vs/*
+
 # Bazel objects
 bazel-*
 bazel-*/
