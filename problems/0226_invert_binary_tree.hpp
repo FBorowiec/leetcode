@@ -1,6 +1,8 @@
 #ifndef LEETCODE_PROBLEMS_0226_INVERT_BINARY_TREE_HPP
 #define LEETCODE_PROBLEMS_0226_INVERT_BINARY_TREE_HPP
 
+#include <algorithm>
+
 namespace invert_binary_tree {
 
 struct TreeNode {
@@ -29,19 +31,22 @@ class Solution {
    *   7     2
    *  / \   / \
    * 9   6 3   1
-   *
-   * Definition for a binary tree node.
-   * struct TreeNode {
-   *     int val;
-   *     TreeNode *left;
-   *     TreeNode *right;
-   *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
-   *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-   *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
-   * };
    */
- public:
-  TreeNode *invertTree(TreeNode *root) {}
+  TreeNode* invertTree(TreeNode* root) {
+    // base case: if tree is empty
+    if (root == nullptr) return root;
+
+    // swap left subtree with right subtree
+    std::swap(root->left, root->right);
+
+    // invert left subtree
+    invertTree(root->left);
+
+    // invert right subtree
+    invertTree(root->right);
+
+    return root;
+  }
 };
 
 }  // namespace invert_binary_tree
