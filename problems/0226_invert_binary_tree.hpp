@@ -32,7 +32,7 @@ class Solution {
    *  / \   / \
    * 9   6 3   1
    */
-  TreeNode* invertTree(TreeNode* root) {
+  TreeNode *invertTree(TreeNode *root) {
     // base case: if tree is empty
     if (root == nullptr) return root;
 
