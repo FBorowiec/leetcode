@@ -38,11 +38,10 @@ class Solution {
   int binarySearch(int target) {
     int lower_bound = 0, higher_bound = weights_.size(), middle_element;
     while (lower_bound < higher_bound) {
-      middle_element = (lower_bound + (higher_bound-1))/2;
-      if(weights_[middle_element] < target) {
+      middle_element = (lower_bound + (higher_bound - 1)) / 2;
+      if (weights_[middle_element] < target) {
         lower_bound = middle_element + 1;
-      }
-      else {
+      } else {
         higher_bound = middle_element;
       }
     }
