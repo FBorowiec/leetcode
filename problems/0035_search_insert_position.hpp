@@ -14,7 +14,7 @@ class Solution {
    */
   int searchInsert(std::vector<int>& nums, int target) {
     unsigned int i{0};
-    for (; i<nums.size(); ++i) {
+    for (; i < nums.size(); ++i) {
       if (target <= nums[i]) return i;
     }
     return i;
