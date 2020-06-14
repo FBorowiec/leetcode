@@ -15,8 +15,8 @@ class LargestDivisibleSubsetTest : public ::testing::Test {
 };
 
 TEST_F(LargestDivisibleSubsetTest, Test1) {
-  std::vector<std::vector<int>> input{1,2,3};
-  std::vector<std::vector<int>> expected_result{1,2};
+  std::vector<int> input{1, 2, 3};
+  std::vector<int> expected_result{1, 3};
 
   auto result = sol.largestDivisibleSubset(input);
 
@@ -26,8 +26,8 @@ TEST_F(LargestDivisibleSubsetTest, Test1) {
 }
 
 TEST_F(LargestDivisibleSubsetTest, Test2) {
-  std::vector<std::vector<int>> input{1,2,4,8};
-  std::vector<std::vector<int>> expected_result{1,2,4,8};
+  std::vector<int> input{1, 2, 4, 8};
+  std::vector<int> expected_result{1, 2, 4, 8};
 
   auto result = sol.largestDivisibleSubset(input);
 
