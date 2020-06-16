@@ -9,20 +9,20 @@ namespace {
 using namespace search_in_a_binary_search_tree;
 
 /**
-* Given the tree:
-*         4
-*        / \
-*       2   7
-*      / \
-*     1   3
-*
-* And the value to search: 2
-*
-* You should return this subtree:
-*       2
-*      / \
-*     1   3
-*/
+ * Given the tree:
+ *         4
+ *        / \
+ *       2   7
+ *      / \
+ *     1   3
+ *
+ * And the value to search: 2
+ *
+ * You should return this subtree:
+ *       2
+ *      / \
+ *     1   3
+ */
 
 class SearchInABinarySearchTreeTest : public ::testing::Test {
  public:
@@ -64,6 +64,5 @@ TEST_F(SearchInABinarySearchTreeTest, Test1) {
   (void)a;
   (void)res;
 }
-
 
 }  // namespace
