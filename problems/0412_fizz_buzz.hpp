@@ -18,9 +18,9 @@ class Solution {
     std::vector<std::string> ret;
     for (int i{1}; i <= n; ++i) {
       if (i % 3 == 0 && i % 5 == 0) ret.emplace_back("FizzBuzz");
-      if (i % 3 == 0) ret.emplace_back("Fizz");
-      if (i % 5 == 0) ret.emplace_back("Buzz");
-      if (i % 3 != 0 && i % 5 != 0) ret.emplace_back(std::to_string(i));
+      else if (i % 3 == 0) ret.emplace_back("Fizz");
+      else if (i % 5 == 0) ret.emplace_back("Buzz");
+      else ret.emplace_back(std::to_string(i));
     }
     return ret;
   }
