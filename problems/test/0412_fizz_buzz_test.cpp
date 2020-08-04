@@ -18,7 +18,7 @@ class FizzBuzz : public ::testing::Test {
 
 TEST_F(FizzBuzz, FizzBuzzTest) {
   auto result = sol.fizzBuzz(15);
-  for (unsigned int i{1}; i <= expected_output.size(); ++i) {
+  for (unsigned int i{0}; i < expected_output.size(); ++i) {
     EXPECT_STREQ(expected_output[i].c_str(), result[i].c_str());
   }
 }

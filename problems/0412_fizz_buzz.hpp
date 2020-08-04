@@ -17,10 +17,10 @@ class Solution {
   std::vector<std::string> fizzBuzz(int n) {
     std::vector<std::string> ret;
     for (int i{1}; i <= n; ++i) {
-      if (i % 3 == 0 && i % 5) ret.emplace_back("FizzBuzz");
+      if (i % 3 == 0 && i % 5 == 0) ret.emplace_back("FizzBuzz");
       if (i % 3 == 0) ret.emplace_back("Fizz");
       if (i % 5 == 0) ret.emplace_back("Buzz");
-      else ret.emplace_back(std::to_string(i));
+      if (i % 3 != 0 && i % 5 != 0) ret.emplace_back(std::to_string(i));
     }
     return ret;
   }
