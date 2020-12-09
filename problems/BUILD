@@ -5,7 +5,7 @@ package(
 )
 
 cc_library(
-  name = "leetcode",
-  hdrs=glob(["*.hpp"]),
-  srcs = glob(["*.cpp"]),
+    name = "leetcode",
+    srcs = glob(["*.cpp"]),
+    hdrs = glob(["*.hpp"]),
 )
