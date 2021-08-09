@@ -9,5 +9,5 @@ git_repository(
 git_repository(
     name = "rules_cc",
     remote = "https://github.com/bazelbuild/rules_cc",
-    branch = "master",
+    branch = "main",
 )
