@@ -25,8 +25,7 @@ TEST_F(SortColorsTest, Test1) {
 
   ASSERT_EQ(input.size(), expected_output.size());
   for (unsigned int i{0}; i < expected_output.size(); ++i) {
-    std::cout << input[i];
-    // EXPECT_EQ(input[i], expected_output[i]);
+    EXPECT_EQ(input[i], expected_output[i]);
   }
 }
 

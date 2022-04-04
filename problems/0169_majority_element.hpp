@@ -1,6 +1,7 @@
 #ifndef LEETCODE_PROBLEMS_0169_MAJORITY_ELEMENT_HPP
 #define LEETCODE_PROBLEMS_0169_MAJORITY_ELEMENT_HPP
 
+#include <algorithm>
 #include <unordered_map>
 #include <vector>
 
