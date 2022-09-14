@@ -1,6 +1,8 @@
 # Leetcode challenges
 
-These are my C++ solutions to Leetcode problems. All problems have the same number as the ones on the [https://leetcode.com/](https://leetcode.com/) website.
+These are my C++ solutions to Leetcode problems.
+All problems have the same number as the ones on the
+[https://leetcode.com/](https://leetcode.com/) website.
 
 ## How to run the code locally with *Bazel* already installed on host
 
@@ -16,7 +18,8 @@ bazel test //problems/test:unit_tests
 
 ## Run the code inside a container
 
-You can use my following Docker image to instantiate a container locally with Ubuntu and Bazel already installed:
+You can use my following Docker image to instantiate a
+container locally with Ubuntu and Bazel already installed:
 
 ```bash
 docker run -it --rm framaxwlad/ubuntu_dev:latest
