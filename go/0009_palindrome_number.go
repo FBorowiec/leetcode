@@ -1,4 +1,4 @@
-package palindrome_number
+package leetcode
 
 import (
 	"strconv"
