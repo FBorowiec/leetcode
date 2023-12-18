@@ -32,7 +32,7 @@ git clone https://github.com/FBorowiec/leetcode.git
 cd leetcode/
 ```
 
-And use the aforementioned commands to run the program:
+And use the following commands to run the program:
 
 ```bash
 bazel test //problems/test:unit_tests
