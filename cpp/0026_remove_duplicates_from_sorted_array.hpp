@@ -3,7 +3,7 @@
 
 #include <vector>
 
-namespace remove_duplicates_rom_sorted_array {
+namespace remove_duplicates_from_sorted_array {
 
 class Solution {
  public:
@@ -40,19 +40,17 @@ class Solution {
   int removeDuplicates(std::vector<int>& nums) {
     int last_element{nums[0]};
     unsigned int current_index{0};
-    unsigned int counter{1};
 
     for (unsigned int i = 1; i < nums.size(); ++i) {
       if (nums[i] != last_element) {
         last_element = nums[i];
         nums[++current_index] = nums[i];
-        counter++;
       }
     }
-    return counter;
+    return ++current_index;
   }
 };
 
-}  // namespace remove_duplicates_rom_sorted_array
+}  // namespace remove_duplicates_from_sorted_array
 
 #endif  // CPP_0026_REMOVE_DUPLICATES_FROM_SORTED_ARRAY_HPP

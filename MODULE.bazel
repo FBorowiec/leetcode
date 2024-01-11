@@ -1,0 +1,4 @@
+module(
+    name = "leetcode",
+    repo_name = "fborowiec_leetcode",
+)
