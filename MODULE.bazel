@@ -2,3 +2,18 @@ module(
     name = "leetcode",
     repo_name = "fborowiec_leetcode",
 )
+
+# Rules
+bazel_dep(name = "rules_cc", version = "0.0.9")
+bazel_dep(name = "googletest", version = "1.14.0")
+bazel_dep(name = "rules_go", version = "0.45.1")
+bazel_dep(name = "rules_python", version = "0.29.0")
+
+# Hedron's Compile Commands Extractor for Bazel
+# https://github.com/hedronvision/bazel-compile-commands-extractor
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+git_override(
+    module_name = "hedron_compile_commands",
+    remote = "https://github.com/hedronvision/bazel-compile-commands-extractor.git",
+    commit = "199ca857b05a7a4dbb332e8d229158feb3f82638",
+)
