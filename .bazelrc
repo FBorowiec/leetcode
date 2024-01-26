@@ -1,0 +1,8 @@
+build --test_env="GTEST_COLOR=1"  # Colored output
+build --incompatible_strict_action_env  # hermetic build
+
+test --test_output=errors  # More verbose test output
+test --color=yes
+
+try-import user.bazelrc
+
